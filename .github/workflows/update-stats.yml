@@ -1,4 +1,4 @@
-name: Waka Readme
+name: Waka Readme + GitHub Snake
 
 on:
   workflow_dispatch:
@@ -11,6 +11,12 @@ jobs:
     name: Update this repo's README
     runs-on: ubuntu-latest
     steps:
+      # Step 1: WakaTime Stats
       - uses: anshhhr/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+
+      # Step 2: GitHub Contribution Snake
+      - uses: anshhhr/github-contribution-grid-snake@main
+        with:
+          USERNAME: 'anshhhr'  # <- Replace with your GitHub username
